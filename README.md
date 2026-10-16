@@ -33,8 +33,7 @@ An editorial, client-facing website prototype created for **Ember & Oak Café**.
 ├── assets/
 │   └── images/           # 11 high-resolution editorial photographs
 ├── server.js             # Zero-dependency local development server
-├── vercel.json           # Vercel deployment configuration
-└── package.json          # Scripts for local dev and deployment
+└── package.json          # Scripts for local dev
 ```
 
 ---
@@ -53,14 +52,6 @@ npm start
 ```
 
 Then visit **`http://localhost:3000`** in your browser.
-
----
-
-## 🌐 Deploy to Vercel (1-Click)
-
-1. Go to [vercel.com/new](https://vercel.com/new).
-2. Import **`veyrastudioads-glitch/ember-and-oak-cafe`**.
-3. Click **Deploy**.
 
 ---
 
