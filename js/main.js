@@ -72,6 +72,9 @@ function initMobileMenu() {
 
   backdrop.addEventListener('click', closeDrawer);
 
+  const drawerCloseButtons = document.querySelectorAll('.mobile-drawer-close');
+  drawerCloseButtons.forEach(btn => btn.addEventListener('click', closeDrawer));
+
   mobileLinks.forEach(link => {
     link.addEventListener('click', () => {
       closeDrawer();

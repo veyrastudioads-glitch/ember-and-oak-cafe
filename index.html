@@ -66,9 +66,17 @@
   <div class="mobile-backdrop"></div>
   <aside class="mobile-drawer" aria-label="Mobile Navigation Drawer">
     <div>
-      <div style="margin-bottom: 2.5rem;">
-        <span class="brand-name" style="color:var(--text-dark); font-size: 1.8rem;">Ember &amp; Oak</span>
-        <p style="font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber-ember); margin-top: 0.25rem;">Specialty Coffee &middot; Fort Kochi</p>
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 2rem;">
+        <div>
+          <span class="brand-name" style="color:var(--text-dark); font-size: 1.5rem;">Ember &amp; Oak</span>
+          <p style="font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber-ember); margin-top: 0.2rem;">Specialty Coffee &middot; Fort Kochi</p>
+        </div>
+        <button class="mobile-drawer-close" aria-label="Close Navigation Menu" style="width: 36px; height: 36px; border-radius: 50%; background: var(--bg-parchment); color: var(--text-dark); display: flex; align-items: center; justify-content: center; cursor: pointer;">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
       </div>
       <ul class="mobile-links">
         <li><a href="#hero" class="mobile-link">Home</a></li>
