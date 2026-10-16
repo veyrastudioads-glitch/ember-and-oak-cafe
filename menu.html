@@ -1,0 +1,647 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Menu — Ember &amp; Oak Café</title>
+  <meta name="description" content="Explore our seasonal coffee offerings, handcrafted signatures, fresh breakfast plates, and small-batch desserts at Ember &amp; Oak Café, Fort Kochi.">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    /* Specific tweaks for menu page readability */
+    .menu-item-interactive {
+      cursor: pointer;
+    }
+    .menu-item-interactive:hover .menu-card-title {
+      color: var(--amber-ember);
+    }
+    .roastery-note-banner {
+      background: var(--bg-parchment);
+      border: 1px solid var(--border-medium);
+      border-radius: 4px;
+      padding: 2.25rem;
+      margin: 4rem 0 2rem;
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 2rem;
+      align-items: center;
+    }
+    @media (max-width: 768px) {
+      .roastery-note-banner {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="site-header scrolled" id="site-header">
+    <div class="container nav-wrapper">
+      <a href="index.html" class="brand-logo" aria-label="Ember & Oak Café Home">
+        <span class="brand-name">Ember &amp; Oak</span>
+        <span class="brand-tagline">Kochi &middot; Specialty Coffee</span>
+      </a>
+
+      <nav class="nav-desktop" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="menu.html" class="nav-link active">Menu</a></li>
+          <li><a href="index.html#experience" class="nav-link">Our Story</a></li>
+          <li><a href="index.html#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="index.html#visit" class="nav-link">Visit Us</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button class="btn btn-primary nav-btn" data-modal="reserve">Reserve Table</button>
+        <button class="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-backdrop"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div style="margin-bottom: 2.5rem;">
+        <span class="brand-name" style="color:var(--text-dark); font-size: 1.8rem;">Ember &amp; Oak</span>
+        <p style="font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber-ember); margin-top: 0.25rem;">Specialty Coffee &middot; Fort Kochi</p>
+      </div>
+      <ul class="mobile-links">
+        <li><a href="index.html" class="mobile-link">Home</a></li>
+        <li><a href="menu.html" class="mobile-link active">Menu</a></li>
+        <li><a href="index.html#experience" class="mobile-link">Our Story</a></li>
+        <li><a href="index.html#gallery" class="mobile-link">Gallery</a></li>
+        <li><a href="index.html#visit" class="mobile-link">Visit Us</a></li>
+      </ul>
+    </div>
+    
+    <div class="mobile-footer-info">
+      <button class="btn btn-primary" style="width: 100%; margin-bottom: 1.25rem;" data-modal="reserve">Reserve a Table</button>
+      <p><strong>12 Market Street</strong>, Fort Kochi</p>
+      <p>+91 98765 43210</p>
+      <p style="color: var(--amber-ember); font-weight: 500; margin-top: 0.5rem;">Open daily: 8:00 AM – 9:30 PM</p>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       MENU HERO
+       ========================================================================== -->
+  <header class="menu-page-hero">
+    <div class="container">
+      <span class="section-kicker">Handcrafted with Intention</span>
+      <h1 class="section-title">The Complete Menu</h1>
+      <p class="section-subtitle">
+        Single-origin coffees, signature in-house infusions, wholesome sourdough plates, and small-batch desserts.
+      </p>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       STICKY CATEGORY FILTER & SEARCH BAR
+       ========================================================================== -->
+  <div class="menu-filter-bar">
+    <div class="container menu-filter-container">
+      <!-- Quick Anchor Category Nav -->
+      <nav class="menu-category-nav" aria-label="Menu Category Filter">
+        <a href="#cat-coffee" class="menu-tab-btn active">Coffee</a>
+        <a href="#cat-signatures" class="menu-tab-btn">Signatures</a>
+        <a href="#cat-breakfast" class="menu-tab-btn">Breakfast</a>
+        <a href="#cat-desserts" class="menu-tab-btn">Desserts</a>
+      </nav>
+
+      <!-- Search Input -->
+      <div class="menu-search-box">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color:var(--text-muted);">
+          <circle cx="11" cy="11" r="8"></circle>
+          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+        </svg>
+        <input type="text" id="menu-search-input" class="menu-search-input" placeholder="Search dish or coffee..." aria-label="Search menu items">
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MAIN MENU CONTENT
+       ========================================================================== -->
+  <main class="container" style="padding-bottom: 6rem;">
+
+    <!-- ==================== 1. COFFEE ==================== -->
+    <section class="menu-category-section" id="cat-coffee" aria-labelledby="heading-coffee">
+      <div class="menu-category-header">
+        <h2 class="menu-category-heading" id="heading-coffee">
+          Coffee <span class="cat-count">(5 selections)</span>
+        </h2>
+        <p class="menu-category-desc">
+          Extracted with precision on our custom commercial machine. Dialed in every morning.
+        </p>
+      </div>
+
+      <div class="menu-full-grid">
+        
+        <!-- Espresso -->
+        <article class="menu-full-card menu-item-interactive">
+          <div>
+            <div class="menu-card-top">
+              <h3 class="menu-card-title">Espresso</h3>
+              <span class="menu-card-price">₹140</span>
+            </div>
+            <p class="menu-card-desc">
+              Double shot of single-origin beans, rich hazelnut crema, balanced acidity with tasting notes of dark cacao and dried fruit.
+            </p>
+          </div>
+          <div class="menu-card-meta">
+            <span class="dietary-tag signature">Single Origin</span>
+            <span class="dietary-tag">18g In / 36g Out</span>
+            <span class="dietary-tag">Vegan</span>
+          </div>
+        </article>
+
+        <!-- Americano -->
+        <article class="menu-full-card menu-item-interactive">
+          <div>
+            <div class="menu-card-top">
+              <h3 class="menu-card-title">Americano</h3>
+              <span class="menu-card-price">₹160</span>
+            </div>
+            <p class="menu-card-desc">
+              Espresso pulled over precisely temperature-controlled hot water, highlighting delicate floral and sweet citrus undertones.
+            </p>
+          </div>
+          <div class="menu-card-meta">
+            <span class="dietary-tag">Hot or Iced</span>
+            <span class="dietary-tag">Zero Sugar</span>
+            <span class="dietary-tag">Vegan</span>
+          </div>
+        </article>
+
+        <!-- Cappuccino -->
+        <article class="menu-full-card menu-item-interactive">
+          <div>
+            <div class="menu-card-top">
+              <h3 class="menu-card-title">Cappuccino</h3>
+              <span class="menu-card-price">₹190</span>
+            </div>
+            <p class="menu-card-desc">
+              Harmonious thirds of bold espresso, sweet steamed milk, and a dense, velvety dome of micro-foam dusted lightly with raw cocoa.
+            </p>
+          </div>
+          <div class="menu-card-meta">
+            <span class="dietary-tag signature">Classic Favorite</span>
+            <span class="dietary-tag">Oat / Whole Milk</span>
+          </div>
+        </article>
+
+        <!-- Flat White -->
+        <article class="menu-full-card menu-item-interactive">
+          <div>
+            <div class="menu-card-top">
+              <h3 class="menu-card-title">Flat White</h3>
+              <span class="menu-card-price">₹210</span>
+            </div>
+            <p class="menu-card-desc">
+              Double ristretto gently integrated with silky, micro-textured milk for an intense, glossy coffee forward mouthfeel.
+            </p>
+          </div>
+          <div class="menu-card-meta">
+            <span class="dietary-tag signature">Barista Choice</span>
+            <span class="dietary-tag">Micro-Foam</span>
+          </div>
+        </article>
+
+        <!-- Latte -->
+        <article class="menu-full-card menu-item-interactive">
+          <div>
+            <div class="menu-card-top">
+              <h3 class="menu-card-title">Latte</h3>
+              <span class="menu-card-price">₹200</span>
+            </div>
+            <p class="menu-card-desc">
+              Smooth, comforting espresso enveloped in silky steamed milk with delicate hand-poured rosetta or tulip latte art.
+            </p>
+          </div>
+          <div class="menu-card-meta">
+            <span class="dietary-tag">Mild &amp; Smooth</span>
+            <span class="dietary-tag">Oat / Whole / Almond</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== 2. SIGNATURES ==================== -->
+    <section class="menu-category-section" id="cat-signatures" aria-labelledby="heading-signatures">
+      <div class="menu-category-header">
+        <h2 class="menu-category-heading" id="heading-signatures">
+          Signatures <span class="cat-count">(3 selections)</span>
+        </h2>
+        <p class="menu-category-desc">
+          Crafted in-house with artisanal syrups, botanical reductions, and slow infusions.
+        </p>
+      </div>
+
+      <div class="menu-full-grid">
+        
+        <!-- Ember Latte -->
+        <article class="menu-full-card menu-item-interactive" style="border-color: var(--amber-ember);">
+          <div>
+            <div class="menu-card-top">
+              <h3 class="menu-card-title">Ember Latte</h3>
+              <span class="menu-card-price">₹240</span>
+            </div>
+            <p class="menu-card-desc">
+              Espresso, toasted brown sugar caramel, silky milk and a delicate hint of flaky sea salt crystals. Our most beloved creation.
+            </p>
+          </div>
+          <div class="menu-card-meta">
+            <span class="dietary-tag signature">House Specialty</span>
+            <span class="dietary-tag">Maldon Salt</span>
+            <span class="dietary-tag">Hot or Iced</span>
+          </div>
+        </article>
+
+        <!-- Oak Cold Brew -->
+        <article class="menu-full-card menu-item-interactive">
+          <div>
+            <div class="menu-card-top">
+              <h3 class="menu-card-title">Oak Cold Brew</h3>
+              <span class="menu-card-price">₹260</span>
+            </div>
+            <p class="menu-card-desc">
+              18-hour cold steeped single-origin coffee served over a crystal hand-carved ice sphere with an aromatic charred orange peel twist.
+            </p>
+          </div>
+          <div class="menu-card-meta">
+            <span class="dietary-tag signature">Slow Crafted</span>
+            <span class="dietary-tag">Cold Extracted</span>
+            <span class="dietary-tag">Vegan</span>
+          </div>
+        </article>
+
+        <!-- Honey Cinnamon Latte -->
+        <article class="menu-full-card menu-item-interactive">
+          <div>
+            <div class="menu-card-top">
+              <h3 class="menu-card-title">Honey Cinnamon Latte</h3>
+              <span class="menu-card-price">₹230</span>
+            </div>
+            <p class="menu-card-desc">
+              Raw forest honey from Wayanad, organic Ceylon cinnamon, double espresso shot, and textured warm milk.
+            </p>
+          </div>
+          <div class="menu-card-meta">
+            <span class="dietary-tag">Wild Honey</span>
+            <span class="dietary-tag">Warming Spice</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== 3. BREAKFAST ==================== -->
+    <section class="menu-category-section" id="cat-breakfast" aria-labelledby="heading-breakfast">
+      <div class="menu-category-header">
+        <h2 class="menu-category-heading" id="heading-breakfast">
+          Breakfast <span class="cat-count">(3 selections)</span>
+        </h2>
+        <p class="menu-category-desc">
+          Served all day until 4:00 PM. Handcrafted sourdough and farm-fresh ingredients.
+        </p>
+      </div>
+
+      <div class="menu-full-grid">
+        
+        <!-- Avocado Toast -->
+        <article class="menu-full-card menu-item-interactive">
+          <div>
+            <div class="menu-card-top">
+              <h3 class="menu-card-title">Avocado Toast</h3>
+              <span class="menu-card-price">₹320</span>
+            </div>
+            <p class="menu-card-desc">
+              Toasted rustic artisan sourdough, crushed Hass avocado, perfectly poached organic farm egg with runny yolk, sheep feta, and fresh microgreens.
+            </p>
+          </div>
+          <div class="menu-card-meta">
+            <span class="dietary-tag signature">Chef Recommendation</span>
+            <span class="dietary-tag">Vegetarian</span>
+            <span class="dietary-tag">Organic Farm Egg</span>
+          </div>
+        </article>
+
+        <!-- Croissant & Eggs -->
+        <article class="menu-full-card menu-item-interactive">
+          <div>
+            <div class="menu-card-top">
+              <h3 class="menu-card-title">Croissant &amp; Eggs</h3>
+              <span class="menu-card-price">₹290</span>
+            </div>
+            <p class="menu-card-desc">
+              Warm, flaky French butter croissant served with soft-scrambled pasture-raised eggs, chives, cracked black pepper, and smoked herb butter.
+            </p>
+          </div>
+          <div class="menu-card-meta">
+            <span class="dietary-tag">Fresh Baked Daily</span>
+            <span class="dietary-tag">French Butter</span>
+          </div>
+        </article>
+
+        <!-- Pancake Stack -->
+        <article class="menu-full-card menu-item-interactive">
+          <div>
+            <div class="menu-card-top">
+              <h3 class="menu-card-title">Pancake Stack</h3>
+              <span class="menu-card-price">₹280</span>
+            </div>
+            <p class="menu-card-desc">
+              Triple stack of fluffy cultured buttermilk pancakes, caramelized Kerala bananas, pure grade-A maple syrup, and whipped cultured butter.
+            </p>
+          </div>
+          <div class="menu-card-meta">
+            <span class="dietary-tag">Sweet Morning</span>
+            <span class="dietary-tag">Vegetarian</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ==================== 4. DESSERTS ==================== -->
+    <section class="menu-category-section" id="cat-desserts" aria-labelledby="heading-desserts" style="border-bottom: none; margin-bottom: 0;">
+      <div class="menu-category-header">
+        <h2 class="menu-category-heading" id="heading-desserts">
+          Desserts <span class="cat-count">(3 selections)</span>
+        </h2>
+        <p class="menu-category-desc">
+          Small-batch desserts created to pair thoughtfully with our filter brews and lattes.
+        </p>
+      </div>
+
+      <div class="menu-full-grid">
+        
+        <!-- Basque Cheesecake -->
+        <article class="menu-full-card menu-item-interactive">
+          <div>
+            <div class="menu-card-top">
+              <h3 class="menu-card-title">Basque Cheesecake</h3>
+              <span class="menu-card-price">₹260</span>
+            </div>
+            <p class="menu-card-desc">
+              Caramelized, deeply browned exterior with an ultra-creamy, molten vanilla custard center. Served with fresh macerated seasonal berries.
+            </p>
+          </div>
+          <div class="menu-card-meta">
+            <span class="dietary-tag signature">House Signature</span>
+            <span class="dietary-tag">Gluten-Free Friendly</span>
+          </div>
+        </article>
+
+        <!-- Chocolate Tart -->
+        <article class="menu-full-card menu-item-interactive">
+          <div>
+            <div class="menu-card-top">
+              <h3 class="menu-card-title">Chocolate Tart</h3>
+              <span class="menu-card-price">₹240</span>
+            </div>
+            <p class="menu-card-desc">
+              70% single-origin dark chocolate silky ganache in a crisp sablé shell, topped with roasted hazelnut praline and flaky sea salt.
+            </p>
+          </div>
+          <div class="menu-card-meta">
+            <span class="dietary-tag">Single Origin Cocoa</span>
+            <span class="dietary-tag">Vegetarian</span>
+          </div>
+        </article>
+
+        <!-- Tiramisu -->
+        <article class="menu-full-card menu-item-interactive">
+          <div>
+            <div class="menu-card-top">
+              <h3 class="menu-card-title">Tiramisu</h3>
+              <span class="menu-card-price">₹250</span>
+            </div>
+            <p class="menu-card-desc">
+              Artisan savoiardi ladyfingers soaked in our signature double espresso, layered with whipped Italian mascarpone, and dusted with dark cocoa.
+            </p>
+          </div>
+          <div class="menu-card-meta">
+            <span class="dietary-tag">Espresso Soaked</span>
+            <span class="dietary-tag">Vegetarian</span>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- Roastery Note Banner -->
+    <div class="roastery-note-banner">
+      <div>
+        <span class="section-kicker no-after">Sourcing &amp; Terroir</span>
+        <h3 style="font-size: 1.6rem; color: var(--text-dark); margin-top: 0.5rem;">Coffee Origin Notes</h3>
+      </div>
+      <div>
+        <p style="font-size: 0.95rem; color: var(--text-body); line-height: 1.7;">
+          All our espresso beverages and pour overs utilize 100% Arabica sourced directly from high-altitude shade-grown estates in the Baba Budan Giri hills of Chikmagalur and the Wayanad plateau. We roast every Tuesday and Friday to guarantee optimal degas and aroma.
+        </p>
+        <p style="font-size: 0.85rem; color: var(--amber-ember-dark); margin-top: 0.75rem; font-weight: 600;">
+          Tasting notes rotation: Red Catuai (Plum &amp; Dark Chocolate) &middot; Yellow Bourbon (Honey &amp; Jasmine)
+        </p>
+      </div>
+    </div>
+
+    <!-- Table Booking Teaser -->
+    <div style="text-align: center; margin-top: 4rem; padding-top: 3rem; border-top: 1px solid var(--border-medium);">
+      <h3 style="font-size: 2rem; color: var(--text-dark); margin-bottom: 0.75rem;">Planning a slow morning?</h3>
+      <p style="color: var(--text-muted); max-width: 500px; margin: 0 auto 1.75rem;">
+        Reserve your preferred reading nook or courtyard table in advance.
+      </p>
+      <button class="btn btn-primary" data-modal="reserve">Reserve a Table</button>
+    </div>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <span class="brand-name">Ember &amp; Oak</span>
+          <p class="footer-desc">
+            Specialty coffee, honest food, good company. Handcrafted in Fort Kochi with quiet reverence for the craft.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Ember & Oak on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Ember & Oak on Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Full Menu</a></li>
+            <li><a href="index.html#experience">Our Story</a></li>
+            <li><a href="index.html#gallery">Gallery</a></li>
+            <li><a href="index.html#visit">Visit Us</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Hours</h4>
+          <ul class="footer-links" style="color: var(--text-light-muted); font-size: 0.88rem;">
+            <li><strong style="color: var(--text-light);">Mon – Fri</strong><br>8:00 AM – 9:30 PM</li>
+            <li style="margin-top: 0.5rem;"><strong style="color: var(--text-light);">Sat – Sun</strong><br>8:00 AM – 10:30 PM</li>
+            <li style="margin-top: 0.75rem; color: var(--amber-ember-light);">12 Market St., Kochi</li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4 class="footer-col-title">Slow Coffee Journal</h4>
+          <p>Notes on rare bean harvests, coffee brewing recipes, and seasonal plates.</p>
+          <form class="newsletter-form" onsubmit="return false;">
+            <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Email Address for Newsletter">
+            <button type="submit" class="btn btn-primary newsletter-btn" aria-label="Subscribe">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Ember &amp; Oak Café. All rights reserved.</div>
+        <div>Handcrafted Client Portfolio Prototype &middot; Fort Kochi, Kerala</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Table Reservation Modal -->
+  <div class="modal-overlay" id="reservation-modal" role="dialog" aria-modal="true" aria-labelledby="res-modal-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="reservation-close" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="section-kicker no-after">Table Booking &amp; Inquiry</span>
+        <h3 class="modal-title" id="res-modal-title">Reserve at Ember &amp; Oak</h3>
+        <p class="modal-subtitle">We hold tables for breakfast, afternoon coffee tastings, and intimate gatherings.</p>
+      </div>
+
+      <form id="reservation-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="res-name">Your Full Name</label>
+            <input type="text" id="res-name" class="form-control" placeholder="E.g. Thomas Kurian" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="res-phone">Contact Phone</label>
+            <input type="tel" id="res-phone" class="form-control" placeholder="+91 98765..." required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="res-date">Date</label>
+            <input type="date" id="res-date" class="form-control" required value="2026-10-18">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="res-time">Preferred Time</label>
+            <select id="res-time" class="form-control" required>
+              <option value="08:30 AM">08:30 AM (Breakfast)</option>
+              <option value="10:00 AM">10:00 AM (Morning Coffee)</option>
+              <option value="12:30 PM">12:30 PM (Lunch &amp; Toast)</option>
+              <option value="03:30 PM">03:30 PM (Afternoon Slow Drip)</option>
+              <option value="05:30 PM" selected>05:30 PM (Golden Hour)</option>
+              <option value="07:30 PM">07:30 PM (Evening Desserts)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="res-guests">Number of Guests</label>
+            <select id="res-guests" class="form-control" required>
+              <option value="1">1 Person (Quiet Work / Reading)</option>
+              <option value="2" selected>2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5+">5+ Guests (Communal Table)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="res-seating">Seating Preference</label>
+            <select id="res-seating" class="form-control">
+              <option value="Reading Nook">Sunlit Reading Nook</option>
+              <option value="Courtyard">Courtyard Garden</option>
+              <option value="Bar">Espresso Bar Counter</option>
+              <option value="Any">First Available</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="res-notes">Special Requests / Notes</label>
+          <input type="text" id="res-notes" class="form-control" placeholder="E.g. Dietary preferences, birthday pour over, quiet desk">
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <span>Confirm Reservation Request</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-notice" id="toast-notice"></div>
+
+  <!-- Search Filter Script for Dedicated Menu Page -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const searchInput = document.getElementById('menu-search-input');
+      const cards = document.querySelectorAll('.menu-full-card');
+
+      if (searchInput) {
+        searchInput.addEventListener('input', (e) => {
+          const query = e.target.value.toLowerCase().trim();
+          cards.forEach(card => {
+            const title = card.querySelector('.menu-card-title')?.textContent.toLowerCase() || '';
+            const desc = card.querySelector('.menu-card-desc')?.textContent.toLowerCase() || '';
+            const meta = card.querySelector('.menu-card-meta')?.textContent.toLowerCase() || '';
+            
+            if (!query || title.includes(query) || desc.includes(query) || meta.includes(query)) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      }
+    });
+  </script>
+  <script src="js/main.js"></script>
+</body>
+</html>

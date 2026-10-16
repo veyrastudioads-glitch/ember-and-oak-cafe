@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ember &amp; Oak Café — Coffee Worth Slowing Down For</title>
+  <meta name="description" content="Specialty coffee, handcrafted plates, and quiet moments in the heart of Kochi, Kerala. Experience single-origin roasts, seasonal breakfast, and artisanal slow living.">
+  <meta name="keywords" content="Ember and Oak, specialty coffee Kochi, Fort Kochi cafe, artisan cafe Kerala, third wave coffee, breakfast Kochi">
+  
+  <!-- Open Graph / Meta -->
+  <meta property="og:title" content="Ember &amp; Oak Café — Coffee Worth Slowing Down For">
+  <meta property="og:description" content="Specialty coffee, handcrafted plates, and quiet moments in the heart of the city.">
+  <meta property="og:image" content="assets/images/hero-cafe.jpg">
+  <meta property="og:type" content="website">
+
+  <!-- Favicon Monogram -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>☕</text></svg>">
+
+  <!-- Core Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       NAVIGATION BAR
+       ========================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container nav-wrapper">
+      <!-- Brand Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Ember & Oak Café Home">
+        <span class="brand-name">Ember &amp; Oak</span>
+        <span class="brand-tagline">Kochi &middot; Specialty Coffee</span>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="nav-desktop" aria-label="Primary Navigation">
+        <ul class="nav-links">
+          <li><a href="#hero" class="nav-link active">Home</a></li>
+          <li><a href="menu.html" class="nav-link">Menu</a></li>
+          <li><a href="#experience" class="nav-link">Our Story</a></li>
+          <li><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li><a href="#visit" class="nav-link">Visit Us</a></li>
+        </ul>
+      </nav>
+
+      <!-- Nav Actions Right -->
+      <div class="nav-actions">
+        <div class="status-indicator" title="Current Café Status">
+          <span class="status-dot"></span>
+          <span>Open Today &middot; 8 AM – 9:30 PM</span>
+        </div>
+        <a href="menu.html" class="btn btn-outline-dark nav-btn">View Menu</a>
+        <button class="btn btn-primary nav-btn" data-modal="reserve">Reserve Table</button>
+        
+        <!-- Mobile Hamburger Toggle -->
+        <button class="mobile-toggle" aria-label="Toggle Navigation Menu" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Overlay -->
+  <div class="mobile-backdrop"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation Drawer">
+    <div>
+      <div style="margin-bottom: 2.5rem;">
+        <span class="brand-name" style="color:var(--text-dark); font-size: 1.8rem;">Ember &amp; Oak</span>
+        <p style="font-size: 0.8rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--amber-ember); margin-top: 0.25rem;">Specialty Coffee &middot; Fort Kochi</p>
+      </div>
+      <ul class="mobile-links">
+        <li><a href="#hero" class="mobile-link">Home</a></li>
+        <li><a href="menu.html" class="mobile-link">Menu</a></li>
+        <li><a href="#experience" class="mobile-link">Our Story</a></li>
+        <li><a href="#gallery" class="mobile-link">Gallery</a></li>
+        <li><a href="#visit" class="mobile-link">Visit Us</a></li>
+      </ul>
+    </div>
+    
+    <div class="mobile-footer-info">
+      <button class="btn btn-primary" style="width: 100%; margin-bottom: 1.25rem;" data-modal="reserve">Reserve a Table</button>
+      <p><strong>12 Market Street</strong>, Kochi, Kerala</p>
+      <p>+91 98765 43210</p>
+      <p style="color: var(--amber-ember); font-weight: 500; margin-top: 0.5rem;">Open daily from 8:00 AM</p>
+    </div>
+  </aside>
+
+  <main id="main-content">
+
+    <!-- ==========================================================================
+         HERO SECTION
+         ========================================================================== -->
+    <section class="hero" id="hero" aria-label="Welcome to Ember & Oak Café">
+      <div class="hero-background">
+        <img src="assets/images/hero-cafe.jpg" alt="Artisan specialty coffee preparation at Ember & Oak with warm natural sunlight" loading="eager">
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <div class="hero-brand-eyebrow fade-up">
+          <span>Est. 2021 &middot; Fort Kochi</span>
+        </div>
+        
+        <h1 class="hero-title fade-up">
+          Ember &amp; Oak<br>
+          <span style="font-style: italic; font-weight: 400;">Coffee worth slowing down for.</span>
+        </h1>
+        
+        <p class="hero-tagline fade-up">
+          Specialty coffee, handcrafted plates, and quiet moments in the heart of the city.
+        </p>
+
+        <div class="hero-ctas fade-up">
+          <a href="#featured-menu" class="btn btn-primary">
+            <span>Explore Menu</span>
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M5 12h14"></path>
+              <path d="m12 5 7 7-7 7"></path>
+            </svg>
+          </a>
+          <a href="#visit" class="btn btn-secondary">
+            <span>Visit Us</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- Subtle Hero Bottom Bar -->
+      <div class="hero-bottom-bar">
+        <div class="container hero-bottom-wrapper">
+          <div>12 Market Street &middot; Kochi, Kerala</div>
+          <a href="#featured-menu" class="scroll-indicator" aria-label="Scroll down to menu">
+            <span>Discover</span>
+            <div class="scroll-mouse">
+              <div class="scroll-wheel"></div>
+            </div>
+          </a>
+          <div>Single-Origin Roastery</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         FEATURED MENU SECTION
+         ========================================================================== -->
+    <section class="featured-menu-section" id="featured-menu" aria-label="Featured Offerings">
+      <div class="container">
+        <div class="section-header text-center fade-up">
+          <span class="section-kicker">The Craft &amp; Kitchen</span>
+          <h2 class="section-title">Made with intention.</h2>
+          <p class="section-subtitle">From carefully sourced beans to plates worth lingering over.</p>
+        </div>
+
+        <!-- 4 Featured Category Cards -->
+        <div class="category-grid">
+          <!-- 1. Espresso -->
+          <article class="category-card fade-up">
+            <div class="category-image-wrapper">
+              <img src="assets/images/espresso-extraction.jpg" alt="Bottomless portafilter extracting rich golden espresso crema" loading="lazy">
+            </div>
+            <div class="category-card-content">
+              <span class="category-card-tag">Roastery Focus</span>
+              <h3 class="category-card-title">Espresso</h3>
+              <p class="category-card-desc">Rich, balanced and carefully extracted under 9 bars of pressure.</p>
+              <div class="category-highlight-item">
+                <span class="category-highlight-name">Double Espresso</span>
+                <span class="category-highlight-price">₹140</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 2. Signature Coffee -->
+          <article class="category-card fade-up">
+            <div class="category-image-wrapper">
+              <img src="assets/images/ember-latte.jpg" alt="The Ember Latte in handcrafted speckled mug with caramel drizzle" loading="lazy">
+            </div>
+            <div class="category-card-content">
+              <span class="category-card-tag">House Specialty</span>
+              <h3 class="category-card-title">Signature Coffee</h3>
+              <p class="category-card-desc">Creative seasonal drinks crafted in-house with toasted caramel &amp; sea salt.</p>
+              <div class="category-highlight-item">
+                <span class="category-highlight-name">The Ember Latte</span>
+                <span class="category-highlight-price">₹240</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. Breakfast -->
+          <article class="category-card fade-up">
+            <div class="category-image-wrapper">
+              <img src="assets/images/avocado-toast.jpg" alt="Artisan breakfast avocado toast on sourdough with poached farm egg" loading="lazy">
+            </div>
+            <div class="category-card-content">
+              <span class="category-card-tag">Morning Plates</span>
+              <h3 class="category-card-title">Breakfast</h3>
+              <p class="category-card-desc">Freshly prepared plates for slow mornings, made from organic local harvest.</p>
+              <div class="category-highlight-item">
+                <span class="category-highlight-name">Avocado Sourdough</span>
+                <span class="category-highlight-price">₹320</span>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. Desserts -->
+          <article class="category-card fade-up">
+            <div class="category-image-wrapper">
+              <img src="assets/images/basque-cheesecake.jpg" alt="Basque burnt cheesecake with dark caramelized top and custard center" loading="lazy">
+            </div>
+            <div class="category-card-content">
+              <span class="category-card-tag">Pâtisserie</span>
+              <h3 class="category-card-title">Desserts</h3>
+              <p class="category-card-desc">Small-batch desserts made for pairing with our pour overs and lattes.</p>
+              <div class="category-highlight-item">
+                <span class="category-highlight-name">Basque Cheesecake</span>
+                <span class="category-highlight-price">₹260</span>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Interactive Editorial Menu Strip -->
+        <div class="menu-preview-strip fade-up">
+          <div class="menu-tabs-header">
+            <div>
+              <span class="section-kicker no-after">Daily Curations</span>
+              <h3 style="font-size: 1.85rem; color: var(--text-dark);">Menu Highlights</h3>
+            </div>
+            <!-- Category Filter Tabs -->
+            <div class="menu-tabs-nav" role="tablist">
+              <button class="menu-tab-btn active" data-category="all" role="tab" aria-selected="true">All Selected</button>
+              <button class="menu-tab-btn" data-category="coffee" role="tab" aria-selected="false">Espresso &amp; Coffee</button>
+              <button class="menu-tab-btn" data-category="signatures" role="tab" aria-selected="false">Signatures</button>
+              <button class="menu-tab-btn" data-category="breakfast" role="tab" aria-selected="false">Breakfast</button>
+              <button class="menu-tab-btn" data-category="desserts" role="tab" aria-selected="false">Desserts</button>
+            </div>
+          </div>
+
+          <!-- Dynamic Items Container -->
+          <div class="menu-items-grid" id="menu-preview-container">
+            <!-- Dynamically populated via js/main.js -->
+          </div>
+
+          <div class="menu-cta-footer">
+            <a href="menu.html" class="btn btn-primary">
+              <span>View Full Menu</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SIGNATURE EXPERIENCE SECTION (Split-screen)
+         ========================================================================== -->
+    <section class="experience-section" id="experience" aria-label="The Ember & Oak Experience">
+      <div class="container">
+        <div class="experience-grid">
+          
+          <!-- Left Column: Large Cafe / Interior Visual -->
+          <div class="experience-image-col fade-up">
+            <div class="experience-image-card">
+              <img src="assets/images/cafe-interior.jpg" alt="Sunlit reading corner with teak wood banquette and arched window at Ember & Oak" loading="lazy">
+              <div class="experience-floating-badge">
+                <p class="badge-title">The Reading Nook</p>
+                <p class="badge-sub">Morning light &middot; Teak wood</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Editorial Copy & 4 Features -->
+          <div class="experience-content-col fade-up">
+            <span class="section-kicker">The Experience</span>
+            <h2 class="section-title">More than coffee.</h2>
+            
+            <p class="experience-lead">
+              “Ember &amp; Oak is a place to pause, meet, work, read, and stay a little longer. Every detail is designed around good coffee and even better moments.”
+            </p>
+
+            <div class="experience-features">
+              <!-- 01 -->
+              <div class="feature-item">
+                <span class="feature-number">01</span>
+                <div class="feature-details">
+                  <h4>Specialty Coffee</h4>
+                  <p>Direct-trade single origin beans roasted weekly in micro-batches to highlight delicate floral and fruit terroir notes.</p>
+                </div>
+              </div>
+
+              <!-- 02 -->
+              <div class="feature-item">
+                <span class="feature-number">02</span>
+                <div class="feature-details">
+                  <h4>Fresh Kitchen</h4>
+                  <p>Hand-crafted morning toasts and wholesome eggs prepared daily from scratch using locally farmed organic produce.</p>
+                </div>
+              </div>
+
+              <!-- 03 -->
+              <div class="feature-item">
+                <span class="feature-number">03</span>
+                <div class="feature-details">
+                  <h4>Seasonal Menu</h4>
+                  <p>Quarterly drink and culinary creations celebrating seasonal spices, monsoon harvests, and tropical botanicals.</p>
+                </div>
+              </div>
+
+              <!-- 04 -->
+              <div class="feature-item">
+                <span class="feature-number">04</span>
+                <div class="feature-details">
+                  <h4>Thoughtful Space</h4>
+                  <p>Handcrafted teak wood furniture, soft morning acoustics, and generous natural daylight designed for quiet contemplation.</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         SIGNATURE DRINK SECTION
+         ========================================================================== -->
+    <section class="signature-drink-section" id="signature-drink" aria-label="Signature Drink Showcase">
+      <div class="container">
+        <div class="signature-grid">
+          
+          <!-- Left: Drink Visual Frame with Stamp -->
+          <div class="signature-visual fade-up">
+            <div class="signature-image-frame">
+              <img src="assets/images/ember-latte.jpg" alt="Artisan The Ember Latte with toasted caramel and sea salt" loading="lazy">
+            </div>
+            <div class="signature-stamp">
+              <span>House</span>
+              <strong>Signature</strong>
+              <span>Est. 2021</span>
+            </div>
+          </div>
+
+          <!-- Right: Drink Details & Interactive Customizer -->
+          <div class="signature-content fade-up">
+            <span class="section-kicker">Signature Creation</span>
+            <h2 class="signature-title">The Ember Latte</h2>
+            
+            <p class="signature-quote">
+              “Espresso, toasted caramel, silky milk and a hint of sea salt.”
+            </p>
+
+            <div class="signature-price-wrap">
+              <span class="signature-price">₹240</span>
+              <span class="signature-tax-note">All taxes included &middot; Crafted fresh</span>
+            </div>
+
+            <!-- Flavor Profile Matrix -->
+            <div class="flavor-profile">
+              <div class="flavor-card">
+                <div class="flavor-label">Espresso Base</div>
+                <div class="flavor-val">Double Ristretto &middot; Chikmagalur Estate</div>
+              </div>
+              <div class="flavor-card">
+                <div class="flavor-label">Caramel</div>
+                <div class="flavor-val">Slow-toasted unrefined organic cane sugar</div>
+              </div>
+              <div class="flavor-card">
+                <div class="flavor-label">Texture</div>
+                <div class="flavor-val">Micro-textured velvety steamed milk</div>
+              </div>
+              <div class="flavor-card">
+                <div class="flavor-label">Finish</div>
+                <div class="flavor-val">Flaky Maldon sea salt crystals</div>
+              </div>
+            </div>
+
+            <!-- Interactive Serving Customizer -->
+            <div class="drink-customizer">
+              <div class="customizer-title">Customize for Your Table</div>
+              
+              <div style="margin-bottom: 0.85rem;">
+                <span style="font-size: 0.72rem; color: var(--text-light-muted); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.4rem;">Temperature:</span>
+                <div class="customizer-options">
+                  <button class="custom-pill active" data-custom="temp">Hot (65°C)</button>
+                  <button class="custom-pill" data-custom="temp">Iced over Crystal Sphere</button>
+                </div>
+              </div>
+
+              <div>
+                <span style="font-size: 0.72rem; color: var(--text-light-muted); text-transform: uppercase; letter-spacing: 0.1em; display: block; margin-bottom: 0.4rem;">Milk Selection:</span>
+                <div class="customizer-options">
+                  <button class="custom-pill active" data-custom="milk">Oat Milk</button>
+                  <button class="custom-pill" data-custom="milk">Whole Milk</button>
+                  <button class="custom-pill" data-custom="milk">Almond Milk</button>
+                </div>
+              </div>
+
+              <p class="customizer-feedback" id="customizer-feedback-text">
+                Selected: Hot (65°C) with Silky Oat Milk &middot; Freshly pulled at counter
+              </p>
+            </div>
+
+            <div>
+              <a href="menu.html#signatures" class="btn btn-primary">
+                <span>Explore All Signatures</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         OUR STORY SECTION
+         ========================================================================== -->
+    <section class="story-section" id="story" aria-label="Brand Story">
+      <div class="container">
+        <div class="story-grid">
+          
+          <!-- Left: Narrative -->
+          <div class="story-text-col fade-up">
+            <span class="section-kicker">Our Heritage</span>
+            <h2 class="section-title">Rooted in coffee.<br>Built around people.</h2>
+            
+            <p class="story-quote-lead">
+              “We believed that between the relentless pace of modern life and the quiet comfort of a warm mug, there needed to be a physical sanctuary.”
+            </p>
+
+            <div class="story-narrative">
+              <p>
+                Founded on Market Street in Fort Kochi, Ember &amp; Oak began as an intimate coffee bar with a vintage 2-group espresso machine and an unwavering commitment: honor the farmer, extract with uncompromising precision, and provide a welcoming place where conversations flourish.
+              </p>
+              <p>
+                We collaborate directly with generational coffee estates in the misty altitudes of Chikmagalur and Wayanad. By paying above fair-trade premiums and roasting in small, meticulous batches, we bring forth the complex nuances of Indian specialty Arabica—from jasmine florality to roasted cacao nibs.
+              </p>
+            </div>
+
+            <!-- Stats Bar -->
+            <div class="story-stats">
+              <div class="stat-item">
+                <span class="stat-number">1,200m</span>
+                <span class="stat-label">Elevation of Origin</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">100%</span>
+                <span class="stat-label">Traceable Arabica</span>
+              </div>
+              <div class="stat-item">
+                <span class="stat-number">18 hrs</span>
+                <span class="stat-label">Slow Cold Brew Extraction</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Visual with Caption -->
+          <div class="story-visual-col fade-up">
+            <div class="story-image-main">
+              <img src="assets/images/cupping-ritual.jpg" alt="Artisan coffee cupping ritual and bean evaluation table" loading="lazy">
+            </div>
+            <div class="story-caption-card">
+              <div class="story-caption-kicker">The Roast Lab</div>
+              <p class="story-caption-text">Every bean batch is cupped and scored before morning doors open at 8:00 AM.</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================================
+         GALLERY SECTION
+         ========================================================================== -->
+    <section class="gallery-section" id="gallery" aria-label="Visual Gallery">
+      <div class="container">
+        <div class="section-header text-center fade-up">
+          <span class="section-kicker">Atmosphere &amp; Moments</span>
+          <h2 class="section-title">A glimpse inside.</h2>
+          <p class="section-subtitle">Scenes from daily life at Ember &amp; Oak — craft coffee, quiet nooks, and fresh bakery plates.</p>
+        </div>
+
+        <!-- Filter Tabs -->
+        <div class="gallery-filter-tabs fade-up">
+          <button class="gallery-filter-btn active" data-filter="all">All Moments</button>
+          <button class="gallery-filter-btn" data-filter="craft">Coffee Craft</button>
+          <button class="gallery-filter-btn" data-filter="drinks">Beverages</button>
+          <button class="gallery-filter-btn" data-filter="space">The Space</button>
+          <button class="gallery-filter-btn" data-filter="plates">Kitchen Plates</button>
+        </div>
+
+        <!-- Masonry Grid with 11 Items -->
+        <div class="gallery-grid">
+          
+          <!-- 0: V60 Pour Over -->
+          <div class="gallery-item wide" data-category="craft" data-index="0">
+            <img src="assets/images/hero-cafe.jpg" alt="Manual V60 Pour Over" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-item-category">Coffee Craft</span>
+              <h3 class="gallery-item-title">Manual V60 Pour Over</h3>
+              <div class="gallery-expand-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 1: Ember Latte -->
+          <div class="gallery-item" data-category="drinks" data-index="1">
+            <img src="assets/images/ember-latte.jpg" alt="The Ember Latte" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-item-category">Beverages</span>
+              <h3 class="gallery-item-title">The Ember Latte</h3>
+              <div class="gallery-expand-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2: Reading Nook -->
+          <div class="gallery-item" data-category="space" data-index="2">
+            <img src="assets/images/cafe-interior.jpg" alt="Sunlit Reading Nook" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-item-category">The Space</span>
+              <h3 class="gallery-item-title">Sunlit Reading Nook</h3>
+              <div class="gallery-expand-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3: Portafilter Pull -->
+          <div class="gallery-item" data-category="craft" data-index="3">
+            <img src="assets/images/espresso-extraction.jpg" alt="Bottomless Portafilter Pull" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-item-category">Coffee Craft</span>
+              <h3 class="gallery-item-title">Bottomless Extraction</h3>
+              <div class="gallery-expand-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 4: Avocado Toast -->
+          <div class="gallery-item" data-category="plates" data-index="4">
+            <img src="assets/images/avocado-toast.jpg" alt="Artisan Avocado Sourdough" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-item-category">Kitchen Plates</span>
+              <h3 class="gallery-item-title">Avocado Sourdough</h3>
+              <div class="gallery-expand-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 5: Basque Cheesecake -->
+          <div class="gallery-item" data-category="plates" data-index="5">
+            <img src="assets/images/basque-cheesecake.jpg" alt="Basque Burnt Cheesecake" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-item-category">Kitchen Plates</span>
+              <h3 class="gallery-item-title">Basque Burnt Cheesecake</h3>
+              <div class="gallery-expand-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 6: Cupping Ritual -->
+          <div class="gallery-item" data-category="craft" data-index="6">
+            <img src="assets/images/cupping-ritual.jpg" alt="Morning Roast Cupping Ritual" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-item-category">Coffee Craft</span>
+              <h3 class="gallery-item-title">Bean Cupping Ritual</h3>
+              <div class="gallery-expand-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 7: Heritage Facade -->
+          <div class="gallery-item" data-category="space" data-index="7">
+            <img src="assets/images/cafe-exterior.jpg" alt="Heritage Facade on Market Street" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-item-category">The Space</span>
+              <h3 class="gallery-item-title">Market Street Facade</h3>
+              <div class="gallery-expand-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 8: Rosetta Latte Art -->
+          <div class="gallery-item" data-category="drinks" data-index="8">
+            <img src="assets/images/latte-art.jpg" alt="Rosetta Micro-Foam Art" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-item-category">Beverages</span>
+              <h3 class="gallery-item-title">Rosetta Latte Art</h3>
+              <div class="gallery-expand-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 9: Fresh Pastries -->
+          <div class="gallery-item" data-category="plates" data-index="9">
+            <img src="assets/images/fresh-pastries.jpg" alt="Morning Flaky Pastries" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-item-category">Kitchen Plates</span>
+              <h3 class="gallery-item-title">Oven-Fresh Pastries</h3>
+              <div class="gallery-expand-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+          <!-- 10: Oak Cold Brew -->
+          <div class="gallery-item" data-category="drinks" data-index="10">
+            <img src="assets/images/oak-cold-brew.jpg" alt="Oak Cold Brew Over Ice" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-item-category">Beverages</span>
+              <h3 class="gallery-item-title">Oak Cold Brew</h3>
+              <div class="gallery-expand-icon">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <polyline points="15 3 21 3 21 9"></polyline>
+                  <polyline points="9 21 3 21 3 15"></polyline>
+                  <line x1="21" y1="3" x2="14" y2="10"></line>
+                  <line x1="3" y1="21" x2="10" y2="14"></line>
+                </svg>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Lightbox Modal Component -->
+    <div class="lightbox-modal" id="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Image Preview Lightbox">
+      <button class="lightbox-close-btn" id="lightbox-close" aria-label="Close Lightbox">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <button class="lightbox-nav-btn lightbox-prev-btn" id="lightbox-prev" aria-label="Previous Image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+
+      <div class="lightbox-content">
+        <div class="lightbox-img-wrapper">
+          <img src="" alt="" id="lightbox-image">
+        </div>
+        <div class="lightbox-caption-bar">
+          <h3 id="lightbox-title"></h3>
+          <p id="lightbox-desc"></p>
+        </div>
+      </div>
+
+      <button class="lightbox-nav-btn lightbox-next-btn" id="lightbox-next" aria-label="Next Image">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+
+    <!-- ==========================================================================
+         VISIT US SECTION
+         ========================================================================== -->
+    <section class="visit-section" id="visit" aria-label="Visit Ember & Oak Café">
+      <div class="container">
+        
+        <div class="section-header fade-up">
+          <span class="section-kicker">Find Sanctuary</span>
+          <h2 class="section-title">Come stay awhile.</h2>
+          <p class="section-subtitle">Whether it's an unhurried solo espresso, an afternoon with a book, or an evening shared with friends.</p>
+        </div>
+
+        <div class="visit-grid">
+          
+          <!-- Left: Cafe Location Details Card -->
+          <div class="visit-info-card fade-up">
+            <h3 class="visit-brand-name">Ember &amp; Oak Café</h3>
+            <p class="visit-address">
+              12 Market Street<br>
+              Fort Kochi, Kerala 682001 &middot; India
+            </p>
+
+            <div class="visit-details-block">
+              <!-- Opening Hours -->
+              <div class="visit-detail-item">
+                <div class="visit-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                </div>
+                <div>
+                  <h4>Opening Hours</h4>
+                  <p><strong>Monday – Friday:</strong> 8:00 AM – 9:30 PM</p>
+                  <p><strong>Saturday – Sunday:</strong> 8:00 AM – 10:30 PM</p>
+                </div>
+              </div>
+
+              <!-- Phone -->
+              <div class="visit-detail-item">
+                <div class="visit-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4>Telephone &amp; Inquiries</h4>
+                  <p>+91 98765 43210</p>
+                  <p style="font-size: 0.85rem; color: var(--text-muted); font-weight: 400;">hello@emberandoakcafe.com</p>
+                </div>
+              </div>
+
+              <!-- Space Notes -->
+              <div class="visit-detail-item">
+                <div class="visit-icon" aria-hidden="true">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M2 20h20"></path>
+                    <path d="M5 20V8.2a2 2 0 0 1 .58-1.42l4.83-4.83a2 2 0 0 1 2.83 0l4.83 4.83a2 2 0 0 1 .58 1.42V20"></path>
+                  </svg>
+                </div>
+                <div>
+                  <h4>Atmosphere &amp; Seating</h4>
+                  <p>Sunlit indoor reading nooks, shaded teak courtyard, and quiet work tables with Wi-Fi.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="visit-ctas">
+              <button class="btn btn-primary" data-modal="directions">
+                <span>Get Directions</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <line x1="7" y1="17" x2="17" y2="7"></line>
+                  <polyline points="7 7 17 7 17 17"></polyline>
+                </svg>
+              </button>
+              <button class="btn btn-outline-dark" data-modal="reserve">
+                <span>Contact Us / Reserve</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right: Visual Map & Facade Card -->
+          <div class="visit-visual-card fade-up">
+            <img src="assets/images/cafe-exterior.jpg" alt="Ember & Oak heritage cafe entrance in Fort Kochi" class="visit-facade-img" loading="lazy">
+            
+            <!-- Stylized Interactive Map Preview Box -->
+            <div class="visit-map-box">
+              <div>
+                <div class="map-kicker">
+                  <span>Fort Kochi Heritage Quarter</span>
+                  <span style="color: #48BB78;">● Easy Walking Zone</span>
+                </div>
+                
+                <div class="map-landmark-list">
+                  <div class="map-landmark">
+                    <span class="map-pin-bullet"></span>
+                    <span>3 min walk from Santa Cruz Cathedral Basilica</span>
+                  </div>
+                  <div class="map-landmark">
+                    <span class="map-pin-bullet"></span>
+                    <span>5 min stroll from Fort Kochi Beach promenade</span>
+                  </div>
+                  <div class="map-landmark">
+                    <span class="map-pin-bullet"></span>
+                    <span>Bicycle &amp; scooter parking right at doorstep</span>
+                  </div>
+                </div>
+              </div>
+
+              <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--border-light-subtle);">
+                <button class="map-open-btn" data-modal="directions">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                    <line x1="8" y1="2" x2="8" y2="18"></line>
+                    <line x1="16" y1="6" x2="16" y2="22"></line>
+                  </svg>
+                  <span>View Map &amp; Transit Info</span>
+                </button>
+                <button class="btn-link" style="color: var(--amber-ember-light); font-size: 0.75rem;" id="copy-address-btn">
+                  Copy Address
+                </button>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==========================================================================
+       FOOTER
+       ========================================================================== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      
+      <div class="footer-top">
+        <!-- Col 1: Brand Info -->
+        <div class="footer-brand">
+          <span class="brand-name">Ember &amp; Oak</span>
+          <p class="footer-desc">
+            Specialty coffee, honest food, good company. Handcrafted in Fort Kochi with quiet reverence for the craft.
+          </p>
+          <div class="footer-social-links">
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Ember & Oak on Instagram">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+              </svg>
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Ember & Oak on Facebook">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Col 2: Navigation Links -->
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="menu.html">Full Menu</a></li>
+            <li><a href="#experience">Our Story</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#visit">Visit Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Hours & Location -->
+        <div>
+          <h4 class="footer-col-title">Hours</h4>
+          <ul class="footer-links" style="color: var(--text-light-muted); font-size: 0.88rem;">
+            <li><strong style="color: var(--text-light);">Mon – Fri</strong><br>8:00 AM – 9:30 PM</li>
+            <li style="margin-top: 0.5rem;"><strong style="color: var(--text-light);">Sat – Sun</strong><br>8:00 AM – 10:30 PM</li>
+            <li style="margin-top: 0.75rem; color: var(--amber-ember-light);">12 Market St., Kochi</li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div class="footer-newsletter">
+          <h4 class="footer-col-title">Slow Coffee Journal</h4>
+          <p>Notes on rare bean harvests, coffee brewing recipes, and seasonal plates.</p>
+          <form class="newsletter-form" onsubmit="return false;">
+            <input type="email" placeholder="Your email address" class="newsletter-input" required aria-label="Email Address for Newsletter">
+            <button type="submit" class="btn btn-primary newsletter-btn" aria-label="Subscribe">
+              Join
+            </button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Footer Bottom -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Ember &amp; Oak Café. All rights reserved.
+        </div>
+        <div>
+          Handcrafted Client Portfolio Prototype &middot; Fort Kochi, Kerala
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       RESERVATION / CONTACT MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="reservation-modal" role="dialog" aria-modal="true" aria-labelledby="res-modal-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="reservation-close" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="section-kicker no-after">Table Booking &amp; Inquiry</span>
+        <h3 class="modal-title" id="res-modal-title">Reserve at Ember &amp; Oak</h3>
+        <p class="modal-subtitle">We hold tables for breakfast, afternoon coffee tastings, and intimate gatherings.</p>
+      </div>
+
+      <form id="reservation-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="res-name">Your Full Name</label>
+            <input type="text" id="res-name" class="form-control" placeholder="E.g. Thomas Kurian" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="res-phone">Contact Phone</label>
+            <input type="tel" id="res-phone" class="form-control" placeholder="+91 98765..." required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="res-date">Date</label>
+            <input type="date" id="res-date" class="form-control" required value="2026-10-18">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="res-time">Preferred Time</label>
+            <select id="res-time" class="form-control" required>
+              <option value="08:30 AM">08:30 AM (Breakfast)</option>
+              <option value="10:00 AM">10:00 AM (Morning Coffee)</option>
+              <option value="12:30 PM">12:30 PM (Lunch &amp; Toast)</option>
+              <option value="03:30 PM">03:30 PM (Afternoon Slow Drip)</option>
+              <option value="05:30 PM" selected>05:30 PM (Golden Hour)</option>
+              <option value="07:30 PM">07:30 PM (Evening Desserts)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="res-guests">Number of Guests</label>
+            <select id="res-guests" class="form-control" required>
+              <option value="1">1 Person (Quiet Work / Reading)</option>
+              <option value="2" selected>2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+              <option value="5+">5+ Guests (Communal Table)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="res-seating">Seating Preference</label>
+            <select id="res-seating" class="form-control">
+              <option value="Reading Nook">Sunlit Reading Nook</option>
+              <option value="Courtyard">Courtyard Garden</option>
+              <option value="Bar">Espresso Bar Counter</option>
+              <option value="Any">First Available</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label" for="res-notes">Special Requests / Notes</label>
+          <input type="text" id="res-notes" class="form-control" placeholder="E.g. Dietary preferences, birthday pour over, quiet desk">
+        </div>
+
+        <div style="margin-top: 1.5rem;">
+          <button type="submit" class="btn btn-primary" style="width: 100%;">
+            <span>Confirm Reservation Request</span>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       DIRECTIONS MODAL
+       ========================================================================== -->
+  <div class="modal-overlay" id="directions-modal" role="dialog" aria-modal="true" aria-labelledby="dir-modal-title">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" id="directions-close" aria-label="Close dialog">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+
+      <div class="modal-header">
+        <span class="section-kicker no-after">Location &amp; Arrival</span>
+        <h3 class="modal-title" id="dir-modal-title">Finding Ember &amp; Oak</h3>
+        <p class="modal-subtitle">Located in the historical heart of Fort Kochi on Market Street.</p>
+      </div>
+
+      <div style="margin-bottom: 1.5rem; background: var(--bg-parchment); padding: 1.25rem; border-radius: 3px; border: 1px solid var(--border-medium);">
+        <p style="font-weight: 600; color: var(--text-dark); margin-bottom: 0.25rem;">Address</p>
+        <p style="font-size: 0.95rem; color: var(--text-body);">12 Market Street, Fort Kochi, Kerala 682001, India</p>
+        <p style="font-size: 0.85rem; color: var(--amber-ember-dark); margin-top: 0.5rem; font-weight: 500;">
+          Landmark: Opposite the Old Dutch Heritage Square, 200m from Santa Cruz Basilica.
+        </p>
+      </div>
+
+      <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1.75rem; font-size: 0.9rem;">
+        <p><strong>By Auto-Rickshaw / Taxi:</strong> Ask for Market Street, Fort Kochi near the Dutch square.</p>
+        <p><strong>By Ferry:</strong> 10-minute walk from Fort Kochi Ro-Ro Jetty.</p>
+        <p><strong>Parking:</strong> Two-wheeler parking in front of the café; car parking available 80m away at Parade Ground.</p>
+      </div>
+
+      <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+        <a href="https://maps.google.com/?q=Fort+Kochi+Kerala" target="_blank" rel="noopener noreferrer" class="btn btn-primary" style="flex: 1;">
+          <span>Open in Google Maps</span>
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="7" y1="17" x2="17" y2="7"></line>
+            <polyline points="7 7 17 7 17 17"></polyline>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-notice" id="toast-notice"></div>
+
+  <!-- Scripts -->
+  <script src="js/main.js"></script>
+</body>
+</html>

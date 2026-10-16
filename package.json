@@ -1,0 +1,19 @@
+{
+  "name": "ember-and-oak-cafe",
+  "version": "1.0.0",
+  "description": "Premium interactive client demo website for Ember & Oak Café",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "deploy": "npx vercel --prod"
+  },
+  "keywords": [
+    "cafe",
+    "specialty-coffee",
+    "portfolio",
+    "client-demo"
+  ],
+  "author": "Ember & Oak",
+  "license": "ISC"
+}
