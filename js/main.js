@@ -236,7 +236,7 @@ const GALLERY_ITEMS = [
   {
     src: 'assets/images/cafe-exterior.jpg',
     category: 'space',
-    title: 'Heritage Facade on Market St.',
+    title: 'Historic Quarter Facade',
     caption: 'Colonial archways, aged lime-washed walls, and welcoming warm lanterns.'
   },
   {
@@ -400,15 +400,11 @@ function initModals() {
     });
   }
 
-  // Handle Reservation Form Submit
+  // Handle Reservation Form Submit (Frontend Demonstration Only)
   if (reserveForm) {
     reserveForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const name = document.getElementById('res-name')?.value || 'Guest';
-      const guests = document.getElementById('res-guests')?.value || '2';
-      closeModal(reserveModal);
-      reserveForm.reset();
-      showToast(`Thank you, ${name}! Table inquiry for ${guests} guests received. We will confirm via SMS.`);
+      showReservationDemoConfirmation();
     });
   }
 
@@ -431,11 +427,11 @@ function initModals() {
 
   if (copyAddressBtn) {
     copyAddressBtn.addEventListener('click', () => {
-      const addressText = 'Ember & Oak Café, 12 Market Street, Fort Kochi, Kerala 682001';
+      const addressText = 'Ember & Oak Café — Kochi, Kerala · Concept Location';
       navigator.clipboard.writeText(addressText).then(() => {
-        showToast('Address copied to clipboard!');
+        showToast('Concept location copied to clipboard');
       }).catch(() => {
-        showToast('Address: 12 Market Street, Fort Kochi');
+        showToast('Kochi, Kerala · Concept Location');
       });
     });
   }
@@ -476,6 +472,65 @@ function showToast(message) {
   setTimeout(() => {
     toast.classList.remove('show');
   }, 4200);
+}
+
+/* Demo Reservation Confirmation */
+function showReservationDemoConfirmation() {
+  const modal = document.getElementById('reservation-modal');
+  const dialog = modal?.querySelector('.modal-dialog');
+  if (!dialog) return;
+
+  const originalContent = dialog.innerHTML;
+
+  dialog.innerHTML = `
+    <button class="modal-close-btn" id="demo-confirm-close-btn" aria-label="Close dialog">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="18" y1="6" x2="6" y2="18"></line>
+        <line x1="6" y1="6" x2="18" y2="18"></line>
+      </svg>
+    </button>
+    <div style="text-align: center; padding: 1.5rem 0.5rem;">
+      <div style="width: 52px; height: 52px; border-radius: 50%; background: rgba(196, 122, 71, 0.12); color: var(--amber-ember); display: inline-flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <polyline points="20 6 9 17 4 12"></polyline>
+        </svg>
+      </div>
+      <span class="section-kicker no-after" style="margin-bottom: 0.5rem;">Portfolio Demonstration</span>
+      <h3 class="modal-title" style="margin-bottom: 0.85rem; font-size: 1.85rem;">Demo Reservation Request</h3>
+      <p style="font-size: 0.98rem; color: var(--text-body); line-height: 1.65; max-width: 440px; margin: 0 auto 1.75rem;">
+        This is a demonstration of the reservation experience. A production website can connect this form to email, WhatsApp, a booking platform, or a custom reservation system.
+      </p>
+      <button class="btn btn-outline-dark" id="demo-confirm-done" style="min-width: 140px;">Close Window</button>
+    </div>
+  `;
+
+  const resetAndClose = () => {
+    modal.classList.remove('active');
+    document.body.style.overflow = '';
+    setTimeout(() => {
+      dialog.innerHTML = originalContent;
+      // Re-attach handlers
+      const newForm = dialog.querySelector('#reservation-form');
+      if (newForm) {
+        newForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          showReservationDemoConfirmation();
+        });
+      }
+      const closeBtn = dialog.querySelector('#reservation-close');
+      if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+          modal.classList.remove('active');
+          document.body.style.overflow = '';
+        });
+      }
+    }, 350);
+  };
+
+  dialog.querySelector('#demo-confirm-close-btn')?.addEventListener('click', resetAndClose);
+  dialog.querySelector('#demo-confirm-done')?.addEventListener('click', resetAndClose);
+
+  showToast('Demo Reservation Request: Demonstration only — no data transmitted.');
 }
 
 /* ==========================================================================
